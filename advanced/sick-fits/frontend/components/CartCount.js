@@ -12,7 +12,7 @@ const AnimationStyles = styled.span`
         backface-visibility: hidden;
     }
     .count-enter {
-        transform: rotateX(0.5turn);
+        transform: rotateX(0.75turn);
     }
     .count-enter-active {
         transform: rotateX(0);
@@ -48,7 +48,7 @@ const CartCount = ({ count }) => (
                 className="count"
                 classNames="count"
                 key={count}
-                timeout={{ enter: 400, exit: 400 }}
+                timeout={{ enter: 450, exit: 450 }}
             >
                 <Dot>{count}</Dot>
             </CSSTransition>
