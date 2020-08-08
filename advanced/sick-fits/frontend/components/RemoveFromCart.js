@@ -22,6 +22,7 @@ const BigButton = styled.button`
         color: ${props => props.theme.red};
         cursor: pointer;
     }
+    justify-self: right;
 `;
 
 class RemoveFromCart extends React.Component {
