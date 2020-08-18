@@ -28,16 +28,15 @@ function totalItems(cart) {
 }
 
 class TakeMyMoney extends React.Component {
-    onToken = (res, createOrder) => {
-        console.log('On Token Called!');
-        console.log(res);
-        createOrder({
+    onToken = async (res, createOrder) => {
+        const order = await createOrder({
             variables: {
                 token: res.id,
             },
         }).catch(err => {
             alert(err.message);
         });
+        console.log(order);
     };
     render() {
         return (
@@ -52,7 +51,7 @@ class TakeMyMoney extends React.Component {
                             amount={calcTotalPrice(me.cart)}
                             name="Sick Fits"
                             description={`Order of ${totalItems(me.cart)} Item${totalItems(me.cart) > 1 ? 's' : ''}`}
-                            image={me.cart[0].item && me.cart[0].item.image}
+                            image={me.cart.length && me.cart[0].item && me.cart[0].item.image}
                             stripeKey="pk_test_51HG7niJtBSUHZbnC4E2CzUpYiudwD5ICkgpFWcxEnZMFQAIOCBM4uXNwjXBmpgo4qnoTcisyZWw29JBQWLUND3qQ001cYqWz2f"
                             currency="USD"
                             email={me.email}
