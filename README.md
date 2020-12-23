@@ -1,2 +1,2 @@
 # react-studies
-A repository for the Wes Bos React courses.
+A repository for React tutorial projects.
